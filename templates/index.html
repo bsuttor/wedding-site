@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block main %}
+{% blocktrans %}
+<h2>Bienvenue !</h2>
+<p>
+    Voici notre site de mariage
+</p>
+<ul>
+    <li><a href="/temoins/">Nos témoins</a></li>
+    <li><a href="/voyage-de-noces/">Notre voyage de noces</a></li>
+    <li><a href="/liste/">Notre liste de mariage</a></li>
+</ul>
+{% endblocktrans %}
+{% endblock %}
