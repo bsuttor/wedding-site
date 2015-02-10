@@ -316,11 +316,11 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.pages",
     "mezzanine.galleries",
-    "mezzanine.twitter",
     "shop",
+    "mezzanine.accounts",
+    "mezzanine.mobile",
+    #"mezzanine.twitter",
     #"mezzanine.blog",
-    #"mezzanine.accounts",
-    #"mezzanine.mobile",
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -428,6 +428,10 @@ SHOP_USE_WISHLIST = False
 SHOP_CHECKOUT_STEPS_SPLIT = False
 SHOP_CHECKOUT_STEPS_CONFIRMATION = True
 SHOP_CHECKOUT_FORM_CLASS = "shop.forms.OrderForm"
+SHOP_HANDLER_BILLING_SHIPPING = None
+SHOP_HANDLER_TAX = None
+SHOP_HANDLER_PAYMENT = None
+SHOP_HANDLER_ORDER = None
 ##################
 # LOCAL SETTINGS #
 ##################

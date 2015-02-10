@@ -5,26 +5,18 @@
     <a href="{% url "shop_cart" %}">
     <span class="glyphicon glyphicon-shopping-cart"></span>
     {% if request.cart.total_quantity == 0 or request.cart.total_quantity == 1 %}
-        {{ request.cart.total_quantity }} cadeau
+        {{ request.cart.total_quantity }} cadeau ajouté
     {% else %}
-        {{ request.cart.total_quantity }} cadeaux
+        {{ request.cart.total_quantity }} cadeaux ajoutés
     {% endif %}
-    {% trans "in cart" %}:
+    {% trans "au panier" %}:
     {{ request.cart.total_price|currency }}</a><br>
     {% if request.cart.total_quantity != 0 %}
     <a href="{% url "shop_checkout" %}" class="btn btn-primary">
         {% if request.session.order.step %}{% trans "Revenir au cadeau" %}{% else %}{% trans "Faire le cadeau" %}{% endif %}
     </a><br>
     {% endif %}
-    {% if settings.SHOP_USE_WISHLIST %}
-    <a href="{% url "shop_wishlist" %}" class="btn-wishlist">
-    <span class="glyphicon glyphicon-star"></span>
-    {% blocktrans count request.wishlist|length as wishlist_count %}Wishlist contains 1 item{% plural %} Wishlist contains {{ wishlist_count }} items{% endblocktrans %}</a>
-    {% endif %}
-    {% ifinstalled mezzanine.accounts %}
-    <br>
-    {% include "accounts/includes/user_panel.html" %}
-    {% endifinstalled %}
+
     {% endspaceless %}
     </div>
 </div>
