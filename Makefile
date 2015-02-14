@@ -7,10 +7,13 @@ PYTHON=$(BIN_PATH)/python
 all: install run
 
 bin/python:
-	virtualenv-3.4 .
+	virtualenv-2.7 .
 
 install: bin/python
-	./bin/pip install -U cartridge
+	#./bin/pip install -U cartridge
+	tar xvzf Pillow-2.7.0.tar.gz
+	cd Pillow-2.7.0; $(PYTHON) setup.py install
+	cd $(INSTALL_PATH)
 	$(PYTHON) manage.py createdb --noinput
 	$(PYTHON) manage.py loaddata fixtures/data.json
 
