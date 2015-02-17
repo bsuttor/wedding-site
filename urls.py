@@ -5,7 +5,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 
 from mezzanine.core.views import direct_to_template
-
+from shop.views import VoyageDeNoces
 
 admin.autodiscover()
 
@@ -16,7 +16,6 @@ admin.autodiscover()
 urlpatterns = i18n_patterns("",
     # Change the admin prefix here to use an alternate URL for the
     # admin interface, which would be marginally more secure.
-    ("^admin/", include(admin.site.urls)),
 )
 
 urlpatterns += patterns('',
@@ -36,7 +35,9 @@ urlpatterns += patterns('',
     # one homepage pattern, so if you use a different one, comment this
     # one out.
 
+    ("^admin/", include(admin.site.urls)),
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    url("^voyagedenoces/$", direct_to_template, {"template": "voyagedenoces.html"}, name ='voyagedenoces'),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------

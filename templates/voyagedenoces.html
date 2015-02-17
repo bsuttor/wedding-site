@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags keyword_tags staticfiles %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}">
+{% endblock extra_css %}
+
+{% block meta_title %}{% trans "voyagedenoces" %}{% endblock %}
+{% block title %}{% trans "Voyage de noces" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+ <li id="breadcrumb-menu-home">
+        <a href="{% url "home" %}">{% trans "Home" %}</a>
+</li>
+<li class="active">{% trans "Voyage de noces" %}</li>
+{% endblock %}
+
+{% block main %}
+{{ block.super }}
+
+<p>
+    Voici notre voyage de noces au <a href='http://fr.wikipedia.org/wiki/Rajasthan' target="_blank">Rajasthan</a> (Nord Ouest de l'Inde).
+</p>
+<ul>
+<li>
+    {% for c in page.children.published %}
+        <h3>{{ c.gallery.title }}</h3>
+        {% editable c.gallery.content %}
+            {{ c.gallery.content|richtext_filters|safe }}
+        {% endeditable %}
+
+        <a href="#" data-gallid="{{ c.id }}" class="toggler"> Notre hotel pour cet étape</a>
+        <div id="gallery-{{ c.id }}" class="gallery row">
+        {% with c.gallery.images.all as images %}
+            {% for image in images %}
+            <div class="col-xs-4 col-sm-3">
+                <a class="thumbnail" rel="#image-{{ image.id }}" title="{{ image.description }}" href="{{ image.file.url }}">
+                    <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail image.file 131 75 %}">
+                </a>
+            </div>
+            {% endfor %}
+        {% endwith %}
+        </div>
+    {% endfor %}
+{% endblock %}
+{% block extra_js %}
+{{ block.super }}
+    <script src="{% static "mezzanine/js/magnific-popup.js" %}"></script>
+    <script>
+    $(document).ready(function() {
+        $('.toggler').click(function(){
+            var gallid = this.getAttribute('data-gallid');
+            $('#gallery-'+gallid).slideToggle();
+        });
+    {% for c in page.children.published %}
+        $('#gallery-{{ c.id }}').css('display','none');
+        $('#gallery-{{ c.id }}').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            gallery: {
+            enabled: true,
+            }
+        });
+    });
+    {% endfor %}
+    </script>
+{% endblock %}
+
+</li>
+</ul>
+
+
