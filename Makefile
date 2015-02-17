@@ -25,4 +25,4 @@ run:
 	$(PYTHON) manage.py runserver
 
 cleanall:
-	rm -rf bin include lib __pycache__ pip-selfcheck.json Database.sqlite3
+	rm -rf bin include lib __pycache__ pip-selfcheck.json Database.db
