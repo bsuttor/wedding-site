@@ -14,4 +14,14 @@ _gaq.unshift(['_setAccount', '{{ settings.GOOGLE_ANALYTICS_ID }}']);
     s.parentNode.insertBefore(g, s);
 })(document, 'script');
 {% endif %}
+
+wedding_countdown = new Date('2015/04/18 11:00')
+$('#countdown').countdown({
+    until: wedding_countdown,
+    format: 'dHMS',
+    //description: 'Jusqu\'au mariage',
+    compact: false,
+    compactLabels: ['année', 'mois', 'semaine(s)', 'jour(s)',]},
+    $.countdown.regionalOptions['fr']);
+
 </script>
