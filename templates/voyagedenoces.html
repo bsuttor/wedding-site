@@ -54,6 +54,7 @@
         $('.toggler').click(function(){
             var gallid = this.getAttribute('data-gallid');
             $('#gallery-'+gallid).slideToggle();
+            return false;
         });
     {% for c in page.children.published %}
         $('#gallery-{{ c.id }}').css('display','none');
