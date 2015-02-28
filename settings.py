@@ -414,17 +414,6 @@ SHOP_HANDLER_BILLING_SHIPPING = None
 SHOP_HANDLER_TAX = None
 SHOP_HANDLER_PAYMENT = None
 SHOP_HANDLER_ORDER = None
-##################
-# LOCAL SETTINGS #
-##################
-
-# Allow any settings to be defined in local_settings.py which should be
-# ignored in your version control system allowing for settings to be
-# defined per machine.
-try:
-    from local_settings import *
-except ImportError:
-    pass
 
 
 #############
@@ -452,6 +441,19 @@ DATABASES = {
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 
 ALLOWED_HOSTS = []
+
+
+##################
+# LOCAL SETTINGS #
+##################
+
+# Allow any settings to be defined in local_settings.py which should be
+# ignored in your version control system allowing for settings to be
+# defined per machine.
+try:
+    from local_settings import *
+except ImportError:
+    pass
 
 
 ####################
