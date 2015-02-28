@@ -11,7 +11,9 @@ bin/python:
 
 install: bin/python
 	./bin/pip install -U cartridge
+	./bin/pip install django-mathfilters
 	$(PYTHON) manage.py createdb --noinput
+	#$(PYTHON) manage.py loaddata backup.json
 	$(PYTHON) manage.py loaddata fixtures/data.json
 
 dumpdata:

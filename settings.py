@@ -309,6 +309,7 @@ INSTALLED_APPS = (
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
     "cartridge.shop",
+    "shop",
     "mezzanine.boot",
     "mezzanine.conf",
     "mezzanine.core",
@@ -316,9 +317,9 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.pages",
     "mezzanine.galleries",
-    "shop",
     "mezzanine.accounts",
     "mezzanine.mobile",
+    "mathfilters",
     #"mezzanine.twitter",
     #"mezzanine.blog",
 )
@@ -420,7 +421,12 @@ SHOP_ORDER_EMAIL_SUBJECT = 'Merci pour votre cadeau'
 SHOP_ORDER_FROM_EMAIL = 'ben.suttor@gmail'
 SHOP_PAYMENT_STEP_ENABLED = False
 SHOP_USE_RATINGS = False
-SHOP_PRODUCT_SORT_OPTIONS = ((_('Le moins cher'), 'unit_price'), (_('Le plus cher'), '-unit_price'))
+SHOP_PRODUCT_SORT_OPTIONS = (
+    (_('Total le moins cher'), 'total_price'),
+    (_('Total le plus cher'), '-total_price'),
+    (_('Part la moins cher'), 'unit_price'),
+    (_('Part la plus cher'), '-unit_price'),
+)
 SHOP_USE_RELATED_PRODUCTS = False
 SHOP_USE_UPSELL_PRODUCTS = False
 SHOP_USE_VARIATIONS = False

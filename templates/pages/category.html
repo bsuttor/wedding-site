@@ -1,6 +1,6 @@
 {% extends "pages/page.html" %}
 
-{% load mezzanine_tags shop_tags i18n %}
+{% load mezzanine_tags shop_tags i18n mathfilters %}
 {% block body_id %}category{% endblock %}
 
 {% block main %}{{ block.super }}
@@ -73,8 +73,9 @@
             <span class="old-price">{{ product.unit_price|currency }}</span>
             {% trans "On sale:" %}
             {% endif %}
+            <span class="total_price">{% trans "Prix global" %} : {{ product.num_in_stock|mul:product.price }} €</span>
             <span class="price">{{ product.price|currency }}</span><br />
-            <span class="restant">{% trans "Restant" %} : {{ product.num_in_stock}}</span>
+            <span class="restant">{% trans "Restant" %} : {{ product.num_in_stock }}</span><br />
         {% else %}
             <span class="coming-soon">{% trans "Coming soon" %}</span>
         {% endif %}
