@@ -19,11 +19,11 @@
 
 <p>
     Voici notre voyage de noces au <a href='http://fr.wikipedia.org/wiki/Rajasthan' target="_blank">Rajasthan</a> (Nord Ouest de l'Inde).
-</p>
+
     <iframe width='100%' height='500px' frameBorder='0'
     src='https://a.tiles.mapbox.com/v4/bsuttor.l8khhk3k/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiYnN1dHRvciIsImEiOiJtZXo5REQ4In0.8WDGPWttjOW4tUt0pBI2wA#6/27.000/74.279'>
     </iframe>
-
+</p>
 <ul>
 <li>
     {% for c in page.children.published %}
@@ -51,10 +51,10 @@
     <script src="{% static "mezzanine/js/magnific-popup.js" %}"></script>
     <script>
     $(document).ready(function() {
-        $('.toggler').click(function(){
+        $('.toggler').click(function(event){
+            event.preventDefault();
             var gallid = this.getAttribute('data-gallid');
             $('#gallery-'+gallid).slideToggle();
-            return false;
         });
     {% for c in page.children.published %}
         $('#gallery-{{ c.id }}').css('display','none');
