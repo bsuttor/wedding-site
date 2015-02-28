@@ -63,7 +63,9 @@
 
 <body id="{% block body_id %}body{% endblock %}">
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div id="countdown"></div>
+
+<div class="navbar navbar-default navbar-top" role="navigation">
 <div class="container">
 <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -82,7 +84,6 @@
 </div>
 </div>
 </div>
-<div id="countdown"></div>
 <div class="container">
 
 {% nevercache %}
