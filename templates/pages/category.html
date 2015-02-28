@@ -73,9 +73,9 @@
             <span class="old-price">{{ product.unit_price|currency }}</span>
             {% trans "On sale:" %}
             {% endif %}
-            <span class="total_price">{% trans "Prix global" %} : {{ product.num_in_stock|mul:product.price }} €</span>
-            <span class="price">{{ product.price|currency }}</span><br />
-            <span class="restant">{% trans "Restant" %} : {{ product.num_in_stock }}</span><br />
+            <span class="total_price">{% trans "Prix global" %} : {{ product.num_in_stock|mul:product.price }} €</span><br />
+            <span class="price">{% trans "Part à" %} : {{ product.price|currency }}</span><br />
+            <span class="restant">{% trans "Nombre de part(s) restante(s)" %} : {{ product.num_in_stock }}</span><br />
         {% else %}
             <span class="coming-soon">{% trans "Coming soon" %}</span>
         {% endif %}
