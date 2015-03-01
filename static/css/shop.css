@@ -180,3 +180,8 @@ footer {
     font-size: 140%;
     border: 0px solid transparent;
 }
+
+.temoins img {
+    float: left;
+    padding-right: 10px;
+}
