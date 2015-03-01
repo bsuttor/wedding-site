@@ -1,9 +1,15 @@
-{% load i18n future pages_tags %}
+{% load i18n future pages_tags staticfiles %}
 {% spaceless %}
 {% if page_branch_in_menu %}
 
 {% if branch_level == 0 %}
 <ul class="nav navbar-nav">
+    <li>
+        <a class="navbar-brand" href="/" style="padding: 0px;" alt="Revenir à la page d'accueil" title="Revenir à la page d'accueil">
+            <img src="{% static "img/maries.png" %}" style="max-width: 100px"/>
+        </a>
+    </a>
+    </li>
     {% for page in page_branch %}
     {% if not has_home and page.is_primary and forloop.first %}
     <li{% if on_home %} class="active"{% endif %} id="dropdown-menu-home">
