@@ -187,3 +187,7 @@ footer {
     float: left;
     padding-right: 10px;
 }
+
+ul.temoins, ul.voyagedenoces {
+    list-style-type: none;
+}

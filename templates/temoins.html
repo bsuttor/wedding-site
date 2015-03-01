@@ -20,20 +20,21 @@
 {% block main %}
 {{ block.super }}
 
-<p>
-    {% editable page.richtextpage.content %}
-        {{ page.richtextpage.content|richtext_filters|safe }}
-    {% endeditable %}
-</p>
-<div class="temoins">
+
+{% editable page.richtextpage.content %}
+    {{ page.richtextpage.content|richtext_filters|safe }}
+{% endeditable %}
+
+<ul class="temoins">
     {% for c in page.children.published %}
+    <li>
         <h3>{{ c.title }}</h3>
         {% editable c.richtextpage.content %}
             {{ c.richtextpage.content|richtext_filters|safe }}
         {% endeditable %}
         <hr style="width: 100%"/>
+    </li>
      {% endfor %}
 {% endblock %}
-
-</div>
+</ul>
 
