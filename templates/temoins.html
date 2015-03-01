@@ -28,7 +28,7 @@
 <ul class="temoins">
     {% for c in page.children.published %}
     <li>
-        <h3>{{ c.title }}</h3>
+        <h3>{% editable c.title %}{{ c.title }}{% endeditable %}</h3>
         {% editable c.richtextpage.content %}
             {{ c.richtextpage.content|richtext_filters|safe }}
         {% endeditable %}
