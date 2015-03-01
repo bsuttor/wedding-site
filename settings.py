@@ -313,6 +313,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
     "django.core.context_processors.tz",
     "mezzanine.conf.context_processors.settings",
+    "mezzanine.pages.context_processors.page",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
@@ -394,12 +395,12 @@ SHOP_DISCOUNT_FIELD_IN_CART = False
 SHOP_DISCOUNT_FIELD_IN_CHECKOUT = False
 SHOP_ORDER_EMAIL_BCC = 'ben.suttor@gmail.com'
 SHOP_ORDER_EMAIL_SUBJECT = 'Merci pour votre cadeau'
-SHOP_ORDER_FROM_EMAIL = 'ben.suttor@gmail'
+SHOP_ORDER_FROM_EMAIL = 'benoit@aureliebenoit.be'
 SHOP_PAYMENT_STEP_ENABLED = False
 SHOP_USE_RATINGS = False
 SHOP_PRODUCT_SORT_OPTIONS = (
-    (_('Total le moins cher'), 'total_price'),
-    (_('Total le plus cher'), '-total_price'),
+    (_('Total le moins cher'), '-total_price'),
+    (_('Total le plus cher'), 'total_price'),
     (_('Part la moins cher'), 'unit_price'),
     (_('Part la plus cher'), '-unit_price'),
 )
@@ -472,3 +473,4 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
+

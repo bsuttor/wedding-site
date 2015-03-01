@@ -1,11 +1,10 @@
 from __future__ import unicode_literals
 
 from django.conf.urls import patterns, include, url
-from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+from django.http import HttpResponse
 
 from mezzanine.core.views import direct_to_template
-from shop.views import VoyageDeNoces
 
 admin.autodiscover()
 
@@ -35,7 +34,7 @@ urlpatterns = patterns('',
     url("^voyagedenoces/$", direct_to_template, {"template": "voyagedenoces.html"}, name ='voyagedenoces'),
     url("^temoins/$", direct_to_template, {"template": "temoins.html"}, name ='temoins'),
     url("^infos-pratiques/$", direct_to_template, {"template": "temoins.html"}, name ='infos-pratiques'),
-    url("^robots.txt/$", direct_to_template, {"static": "robots.txt"}, name ='robots.txt'),
+    ('^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /", mimetype="text/plain")),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
