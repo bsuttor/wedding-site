@@ -8,6 +8,7 @@
 }
 
 body {
+  cursor:url("../img/bus-mouse.png"), auto;
   /*background-image: url('../img/aurebenworld-white-mini.jpg');*/
   background-image: url('../img/wood-floor-white.jpg');
   background-repeat:no-repeat;
