@@ -188,6 +188,9 @@ footer {
     float: left;
     padding-right: 10px;
 }
+.temoins td {
+    vertical-align: top;
+}
 
 ul.temoins, ul.voyagedenoces {
     list-style-type: none;
