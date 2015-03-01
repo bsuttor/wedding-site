@@ -214,3 +214,6 @@ p.accueiltext {
     margin-bottom: 5px;
     margin-top: 10px;
 }
+.panel-body {
+    text-align: center;
+}
