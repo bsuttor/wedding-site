@@ -201,7 +201,7 @@ div.footer{
     padding: 15px;
 }
 div.bannerimage img{
-    max-width: 380px;
+    max-width: 33.3%;
     float: left;
 }
 p.accueiltext {
