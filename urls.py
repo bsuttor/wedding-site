@@ -33,6 +33,7 @@ urlpatterns = patterns('',
     ("^admin/", include(admin.site.urls)),
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
     url("^voyagedenoces/$", direct_to_template, {"template": "voyagedenoces.html"}, name ='voyagedenoces'),
+    url("^temoins/$", direct_to_template, {"template": "temoins.html"}, name ='temoins'),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
