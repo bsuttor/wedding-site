@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n staticfiles %}
 
 {% block meta_title %}{% trans "Home" %}{% endblock %}
 {% block title %}{% trans "Home" %}{% endblock %}
@@ -9,16 +9,31 @@
 {% endblock %}
 
 {% block main %}
-{% blocktrans %}
+
 <h2>Bienvenue !</h2>
-<p>
-    Voici notre site de mariage
+<div class="bannerimage">
+    <img src="{% static "img/aureben3.jpg" %}"/>
+    <img src="{% static "img/aureben1.jpg" %}" >
+    <img src="{% static "img/aureben2.jpg" %}"/>
+</div>
+<div style="clear:both"></div>
+<p class="accueiltext mediumfontsize">
+    Nous sommes très heureux de vous accueillir sur notre site. Vous pourrez y trouver toutes les informations sur :
 </p>
 <ul>
-    <li><a href="/temoins/">Nos témoins</a></li>
-    <li><a href="/liste/">Notre liste de mariage</a></li>
-    <li><a href="/voyagedenoces/">Notre voyage de noces</a></li>
-    <li><a href="/infos-pratiques/">Les informations pratiques</a></li>
+    <li><a href="/voyagedenoces/" class="mediumfontsize">Notre voyage de noces</a></li>
+    <li><a href="/temoins/" class="mediumfontsize">Nos témoins</a></li>
+    <li><a href="/liste/" class="mediumfontsize">Notre liste de mariage</a></li>
+    <li><a href="/infos-pratiques/" class="mediumfontsize">Les informations pratiques</a></li>
+    <li><a href="/les-futurs-maries/" class="mediumfontsize">Gallerie photos des futurs mariés</a></li>
 </ul>
-{% endblocktrans %}
+<p class="accueiltext mediumfontsize">
+A bientôt !
+</p>
+<p class="accueiltext mediumfontsize">
+Aurélie et Benoît
+</p>
+<div style="text-align: center">
+<img src="{% static "img/aurebenworld-white-mini.jpg" %}" style="width: 90%">
+</div>
 {% endblock %}
