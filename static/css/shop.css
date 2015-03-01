@@ -15,7 +15,7 @@ body {
   /*background-attachment:fixed;*/
   /*background-size: 50% auto;*/
   background-position: center top;
-  font-family: "Bradley Hand ITC", "Lucida Sans";
+  font-family: "Bradley Hand ITC", "Lucida Sans", Helvetica, sans-serif;;
   font-size: 18px;
   line-height: 1.428571429;
   color: #333333;
@@ -26,7 +26,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Bradley Hand ITC";
+  font-family: "Bradley Hand ITC", "Indie Flower", Helvetica, sans-serif;;
   font-weight: 900;
   line-height: 1.1;
   color: inherit;
