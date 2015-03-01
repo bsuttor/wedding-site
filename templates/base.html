@@ -119,8 +119,12 @@
 {% endif %}
 {% endnevercache %}
 
-<h1>{% block title %}{% endblock %}</h1>
-
+<h1 class="col-md-8 middle">{% block title %}{% endblock %}</h1>
+<div class="col-md-4 right">
+    {% nevercache %}
+    {% include "includes/user_panel.html" %}
+    {% endnevercache %}
+</div>
 <ul class="breadcrumb">
 {% spaceless %}
 {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
@@ -132,15 +136,11 @@
 <div class="container">
 <div class="row">
 
-<div class="col-md-9 middle">
+<div class="col-md-12 middle">
     {% block main %}{% endblock %}
 </div>
 
-<div class="col-md-3 right">
-    {% nevercache %}
-    {% include "includes/user_panel.html" %}
-    {% endnevercache %}
-</div>
+
 
 </div>
 </div>
