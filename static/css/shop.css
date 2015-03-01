@@ -4,8 +4,8 @@
     font-family: Bradley Hand ITC;
     font-style:normal;
     font-weight: 700;
-    src: url('../fonts/BRADLEY0.eot');
-    /*src: url('../fonts/Bradley-Regular.otf') format('truetype');*/
+    /*src: url('../fonts/BRADLEY0.eot');*/
+    src: url('../fonts/bradleyhanditc.ttf') format('truetype');
 }
 
 body {
