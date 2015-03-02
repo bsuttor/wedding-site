@@ -24,7 +24,7 @@ makemessages:
 	$(PYTHON) manage.py compilemessages
 
 run:
-	$(PYTHON) manage.py runserver
+	$(PYTHON) manage.py runserver 0.0.0.0:8000
 
 cleanall:
 	rm -rf bin include lib __pycache__ pip-selfcheck.json Database.db
