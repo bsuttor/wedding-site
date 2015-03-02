@@ -12,7 +12,7 @@ body {
   cursor:url("../img/bus-mouse.png"), auto;
   background-image: url('../img/wood-floor-white-cut.jpg');
   background-repeat: repeat-y;
-
+  background-attachment:fixed;
   background-position: center top;
   font-family: "Bradley Hand ITC", "Lucida Sans", Helvetica, sans-serif;
   font-size: 18px;
