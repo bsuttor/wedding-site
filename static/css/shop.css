@@ -10,11 +10,9 @@
 
 body {
   cursor:url("../img/bus-mouse.png"), auto;
-  /*background-image: url('../img/aurebenworld-white-mini.jpg');*/
-  background-image: url('../img/wood-floor-white.jpg');
-  background-repeat:no-repeat;
-  /*background-attachment:fixed;*/
-  /*background-size: 50% auto;*/
+  background-image: url('../img/wood-floor-white-cut.jpg');
+  background-repeat: repeat-y;
+
   background-position: center top;
   font-family: "Bradley Hand ITC", "Lucida Sans", Helvetica, sans-serif;
   font-size: 18px;
