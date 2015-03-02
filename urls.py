@@ -1,8 +1,10 @@
 from __future__ import unicode_literals
 
 from django.conf.urls import patterns, include, url
+from django.conf import settings
 from django.contrib import admin
 from django.http import HttpResponse
+from django.views.generic import RedirectView
 
 from mezzanine.core.views import direct_to_template
 
@@ -35,6 +37,7 @@ urlpatterns = patterns('',
     url("^temoins/$", direct_to_template, {"template": "temoins.html"}, name ='temoins'),
     url("^infos-pratiques/$", direct_to_template, {"template": "temoins.html"}, name ='infos-pratiques'),
     ('^robots.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /", mimetype="text/plain")),
+    (r'^favicon\.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'img/favicon.ico')),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
