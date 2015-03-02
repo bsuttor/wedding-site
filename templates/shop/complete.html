@@ -80,9 +80,6 @@ _gaq.push(['_trackTrans']);
 <p>{% trans "Aurélie et Benoît" %}</p>
 
 
-<br>
-<form class="order-complete-form" method="post" action="{% url "shop_invoice_resend" order.id %}?next={{ request.path }}">
-    {% csrf_token %}
-    <input type="submit" class="btn btn-default" value="{% trans "Re-envoyer les informations par e-mail" %}">
-</form>
+<br />
+
 {% endblock %}

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n mezzanine_tags keyword_tags staticfiles %}
+{% load i18n mezzanine_tags keyword_tags staticfiles pages_tags %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static "mezzanine/css/magnific-popup.css" %}">
 {% endblock extra_css %}
@@ -25,16 +25,7 @@
     {{ page.richtextpage.content|richtext_filters|safe }}
 {% endeditable %}
 
-<ul class="temoins">
-    {% for c in page.children.published %}
-    <li>
-        <hr style="width: 100%"/>
-        <h3>{% editable c.title %}{{ c.title }}{% endeditable %}</h3>
-        {% editable c.richtextpage.content %}
-            {{ c.richtextpage.content|richtext_filters|safe }}
-        {% endeditable %}
-    </li>
-     {% endfor %}
-{% endblock %}
-</ul>
+{% page_menu page "pages/menus/tree.html" %}
 
+
+{% endblock %}
