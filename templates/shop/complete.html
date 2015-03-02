@@ -1,5 +1,5 @@
 {% extends "shop/base.html" %}
-{% load i18n future %}
+{% load i18n future shop_tags %}
 
 {% block body_id %}complete{% endblock %}
 
@@ -72,10 +72,12 @@ _gaq.push(['_trackTrans']);
 
 {% block main %}
 <p>{% trans "Merci pour votre cadeau." %}</p>
-<p>{% trans "Pour le payement de celui-ci vous pouvez faire un virement sur le compte suivant :" %}</p>
-<p>IBAN : {{ settings.COMPTEBANQUE }}</p>
-<p>BIC : {{ settings.COMPTEBANQUEBIC }}</p>
+<p>{% trans "Pour le payement de celui-ci vous pouvez faire un virement une virement de" %} <strong>{{ order.total|currency }}</strong> {% trans "sur le compte suivant : " %}</p>
+<p>IBAN : BE52 8440 6137 0109</p>
+<p>BIC : RABOBE22</p>
 <p>{% trans "Nous vous avons envoyé un e-mail avec ces informations" %}</p>
+<p>{% trans "Encore merci et à bientôt !" %}</p>
+<p>{% trans "Aurélie et Benoît" %}</p>
 
 
 <br>

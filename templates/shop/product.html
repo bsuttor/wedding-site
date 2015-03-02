@@ -93,7 +93,7 @@ $(document).ready(function() {
                 <span class="old-price">{{ variation.unit_price|currency }}</span>
                 {% trans "On sale:" %}
             {% endif %}
-            <span class="price">{{ variation.price|currency }}</span>
+            <span class="price">{% trans "Part à" %} : {{ variation.price|currency }}</span>
         {% else %}
             {% if has_available_variations %}
             <span class="error-msg">
@@ -109,6 +109,7 @@ $(document).ready(function() {
 
 <form method="post" id="add-cart" class="shop-form">
     {% fields_for add_product_form %}
+    {% trans "Nombre de part(s) restante(s)" %} : {{ product.num_in_stock }}
     <div class="form-actions">
         <input type="submit" class="btn btn-primary btn-lg pull-right" name="add_cart" value="{% trans "Offrir" %}">
         {% if settings.SHOP_USE_WISHLIST %}

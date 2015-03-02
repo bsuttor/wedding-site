@@ -1,6 +1,13 @@
 {% load shop_tags i18n %}
 
 <p>{% trans "Dear" %} {{ order.billing_detail_first_name }},</p>
-<p>{% trans "Your order has been successful, details are below." %}</p>
+<p>{% trans "Merci pour votre cadeau." %}</p>
+<p>{% trans "Celui-ci a été enregistré." %}</p>
+<p>{% trans "Il ne vous reste plus qu'a faire une virement de" %} <strong>{{ order.total|currency }}</strong> {% trans "sur le compte suivant : " %}</p>
+<p>IBAN : BE52 8440 6137 0109</p>
+<p>BIC : RABOBE22</p>
+<p>{% trans "Encore merci et à bientôt !" %}</p>
+<p>{% trans "Aurélie et Benoît" %}</p>
+
 {% include "shop/includes/order_details.html" %}
 

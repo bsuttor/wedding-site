@@ -1,4 +1,4 @@
-{% load mezzanine_tags %}
+{% load mezzanine_tags i18n %}
 
 {% nevercache %}
 <input type="hidden" name="referrer" value="{{ request.META.HTTP_REFERER }}">
@@ -11,7 +11,15 @@
 {% else %}
 <div class="form-group input_{{ field.id_for_label }} {{ field.field.type }}
     {% if field.errors %} has-error{% endif %}">
-    {% if field.label %}<label class="control-label" for="{{ field.auto_id }}">{{ field.label }}</label>{% endif %}
+    {% if field.label %}
+        {% if field.auto_id == "id_quantity" %}
+        <label class="control-label" for="{{ field.auto_id }}">
+            {% trans "Nombre de part(s) à offrir" %} :
+        </label>
+        {% else %}
+            <label class="control-label" for="{{ field.auto_id }}">{{ field.label }}</label>
+        {% endif %}
+    {% endif %}
     {{ field }}
     {% if field.errors %}
     <p class="help-block">

@@ -58,6 +58,7 @@
 
 <div class="row product-list">
 {% for product in products.object_list %}
+{% if product.num_in_stock %}
     <div class="col-xs-6 col-sm-4 col-lg-3 product-thumb">
     <a href="{{ product.get_absolute_url }}" class="thumbnail">
         {% if product.image %}
@@ -83,6 +84,7 @@
         </div>
     </a>
     </div>
+{% endif %}
 {% endfor %}
 </div>
 
