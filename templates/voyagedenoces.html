@@ -33,6 +33,7 @@
 <ul class="voyagedenoces">
     {% for c in page.children.published %}
         <li>
+        <hr style="width: 100%"/>
         <h3>{{ c.gallery.title }}</h3>
         {% editable c.gallery.content %}
             {{ c.gallery.content|richtext_filters|safe }}
@@ -50,7 +51,6 @@
             {% endfor %}
         {% endwith %}
         </div>
-        <hr style="width: 100%"/>
         </li>
     {% endfor %}
 {% endblock %}
