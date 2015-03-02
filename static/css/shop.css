@@ -4,12 +4,11 @@
     font-family: Bradley Hand ITC;
     font-style:normal;
     font-weight: 700;
-    /*src: url('../fonts/BRADLEY0.eot');*/
-    src: url('../fonts/bradleyhanditc.ttf') format('truetype');
+    src: url(.'./fonts/BRADLEY0.eot?#iefix') format('embedded-opentype'), url('../fonts/bradleyhanditc.ttf') format('truetype');
 }
 
 body {
-  cursor:url("../img/bus-mouse.png"), auto;
+  cursor: url(/static/img/bus-mouse.cur), auto;
   background-image: url('../img/wood-floor-white-cut.jpg');
   background-repeat: repeat-y;
   background-attachment:fixed;
