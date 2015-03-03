@@ -39,7 +39,7 @@
             {{ c.gallery.content|richtext_filters|safe }}
         {% endeditable %}
 
-        <a href="#" data-gallid="{{ c.id }}" class="toggler"> Notre hotel pour cet étape</a>
+        <a href="#" data-gallid="{{ c.id }}" class="toggler"> Notre hôtel pour cette étape</a>
         <div id="gallery-{{ c.id }}" class="gallery row">
         {% with c.gallery.images.all as images %}
             {% for image in images %}
