@@ -1,19 +1,22 @@
 /* Embedded Fonts */
 
 @font-face {
-    font-family: Bradley Hand ITC;
-    font-style:normal;
-    font-weight: 700;
-    src: url(.'./fonts/BRADLEY0.eot?#iefix') format('embedded-opentype'), url('../fonts/bradleyhanditc.ttf') format('truetype');
+    font-family: 'Bradley Hand ITC';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/BRADLEY0.eot');
+    src: url('../fonts/BRADLEY0.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bradleyhanditc.ttf') format('truetype');
 }
 
+
 body {
-  cursor: url(/static/img/bus-mouse.cur), auto;
+  cursor: url('/static/img/bus-mouse.cur'), auto;
   background-image: url('../img/wood-floor-white-cut.jpg');
   background-repeat: repeat-y;
   background-attachment:fixed;
   background-position: center top;
-  font-family: "Bradley Hand ITC", "Lucida Sans", Helvetica, sans-serif;
+  font-family: "Bradley Hand ITC", "Indie Flower";
   font-size: 18px;
   line-height: 1.428571429;
   color: #333333;
