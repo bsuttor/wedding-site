@@ -67,7 +67,7 @@
         {% endif %}
         <div class="caption">
         <h6>{{ product }}</h6>
-        <div class="price-info">
+        <div class="price-info" style="min-height:100px">
         {% if product.has_price %}
             {% if product.on_sale %}
             <span class="old-price">{{ product.unit_price|currency }}</span>
@@ -79,7 +79,7 @@
                 <span class="restant">{% trans "Nombre de part(s) restante(s)" %} : {{ product.num_in_stock }}</span><br />
             {% else %}
                 <br />
-                <span class="restant">{% trans "Déjà offert" %}</span>
+                <span class="dejaoffert">{% trans "Déjà offert" %}</span>
                 <br />
             {% endif %}
         {% else %}
