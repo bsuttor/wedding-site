@@ -58,7 +58,6 @@
 
 <div class="row product-list">
 {% for product in products.object_list %}
-{% if product.num_in_stock %}
     <div class="col-xs-6 col-sm-4 col-lg-3 product-thumb">
     <a href="{{ product.get_absolute_url }}" class="thumbnail">
         {% if product.image %}
@@ -74,9 +73,15 @@
             <span class="old-price">{{ product.unit_price|currency }}</span>
             {% trans "On sale:" %}
             {% endif %}
-            <span class="total_price">{% trans "Prix global" %} : {{ product.num_in_stock|mul:product.price }} €</span><br />
-            <span class="price">{% trans "Part à" %} : {{ product.price|currency }}</span><br />
-            <span class="restant">{% trans "Nombre de part(s) restante(s)" %} : {{ product.num_in_stock }}</span><br />
+            {% if product.num_in_stock %}
+                <span class="total_price">{% trans "Prix global" %} : {{ product.num_in_stock|mul:product.price }} €</span><br />
+                <span class="price">{% trans "Part à" %} : {{ product.price|currency }}</span><br />
+                <span class="restant">{% trans "Nombre de part(s) restante(s)" %} : {{ product.num_in_stock }}</span><br />
+            {% else %}
+                <br />
+                <span class="restant">{% trans "Déjà offert" %}</span>
+                <br />
+            {% endif %}
         {% else %}
             <span class="coming-soon">{% trans "Coming soon" %}</span>
         {% endif %}
@@ -84,7 +89,6 @@
         </div>
     </a>
     </div>
-{% endif %}
 {% endfor %}
 </div>
 
