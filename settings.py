@@ -399,8 +399,6 @@ SHOP_ORDER_FROM_EMAIL = 'benoit@aureliebenoit.be'
 SHOP_PAYMENT_STEP_ENABLED = False
 SHOP_USE_RATINGS = False
 SHOP_PRODUCT_SORT_OPTIONS = (
-    (_('Total le moins cher'), '-total_price'),
-    (_('Total le plus cher'), 'total_price'),
     (_('Part la moins cher'), 'unit_price'),
     (_('Part la plus cher'), '-unit_price'),
 )
